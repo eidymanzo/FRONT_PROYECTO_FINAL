@@ -1,0 +1,38 @@
+<h2>Gestión de Cuentas</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+     <label>id:</label>
+  <input formControlName="id" type="id" />
+  <label>Ahorro:</label>
+  <input formControlName="ahorro" type="ahorro" />
+  <label>Ingresos:</label>
+  <input formControlName="ingresos" type="ingresos" /> 
+<label>Gastos:</label>
+  <input formControlName="gastos" type="gastos" />
+ <button type="submit">{{ editMode ? 'Actualizar' : 'Crear' }}</button>
+  <button type="button" (click)="resetForm()" *ngIf="editMode">Cancelar</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Ahorro</th>
+      <th>Ingresos</th>
+      <th>Gastos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cuenta of cuentas">
+      <td>{{ cuenta.id }}</td>
+       <td>{{ <cuenta class="id"></cuenta> }}</td>
+      <td>{{ <cuenta class="ahorro"></cuenta> }}</td>
+      <td>{{ <cuenta class="ingresos"></cuenta> }}</td>
+      <td>{{ <cuenta class="gastos"></cuenta> }}</td>
+      <td>
+        <button (click)="editCuenta(cuenta)">Editar</button>
+        <button (click)="deleteCuenta(cuenta.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

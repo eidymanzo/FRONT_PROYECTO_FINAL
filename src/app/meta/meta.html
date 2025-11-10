@@ -1,0 +1,43 @@
+<h2>Gestión de Metas</h2>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+     <label>id:</label>
+  <input formControlName="id" type="id" />
+  <label>plazo:</label>
+  <input formControlName="plazo" type="plazo" />
+  <label>monto:</label>
+  <input formControlName="monto" type="monto" /> 
+<label>limite:</label>
+  <input formControlName="limite" type="limite" />
+<label>objetivos:</label>
+  <input formControlName="objetivo" type="objetivo" />
+
+ <button type="submit">{{ editMode ? 'Actualizar' : 'Crear' }}</button>
+  <button type="button" (click)="resetForm()" *ngIf="editMode">Cancelar</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Plazo</th>
+      <th>Monto</th>
+      <th>Limite</th>
+       <th>Objetivo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let meta of metas">
+      <td>{{ meta.id }}</td>
+       <td>{{ <meta class="id"></meta> }}</td>
+      <td>{{ <meta class="plazo"></meta> }}</td>
+      <td>{{ <meta class="monto"></meta> }}</td>
+      <td>{{ <meta class="limite"></meta> }}</td>
+      <td>{{ <meta class="objetivo"></meta> }}</td>
+      <td>
+        <button (click)="editMeta(Meta)">Editar</button>
+        <button (click)="deleteMeta(Meta.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
