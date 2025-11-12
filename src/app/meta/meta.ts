@@ -15,11 +15,11 @@ interface Meta {
   selector: 'app-metas-crud',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './crud-metas.html'
+  templateUrl: './meta.html'
 })
 export class MetasComponent implements OnInit {
   form: FormGroup;
-  meta: Meta[] = [];
+  metas: Meta[] = [];
   editMode = false;
   editMetaId: number | null = null;
 
@@ -40,7 +40,7 @@ export class MetasComponent implements OnInit {
   loadMetas() {
     this.http.get<Meta[]>('http://localhost:8080/api/metas')
     .subscribe(data => {
-      this.meta = data;
+      this.metas = data;
     });
   }
 

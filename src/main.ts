@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { RegisterComponent } from './app/register/register';
 import { HomeComponent } from './app/home/home';
 import { LoginComponent } from './app/login/login';
-import { CRUDUsuariosComponent } from './app/crud-Usuarios/crud-usuario';
+import { CRUDUsuariosComponent } from './app/crud-usuarios/crud-usuarios';
 
 const routes = [
   { path: 'register', component: RegisterComponent },

@@ -3,23 +3,27 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 
-interface User {
+interface Usuario {
   id: number;
+  nombre: string;
+  apellido: string;
   email: string;
+  telefono: string;
+  nombreUsuario: string;
   password: string;
 }
 
 @Component({
-  selector: 'app-users-crud',
+  selector: 'app-usuarios-crud',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './crud-usuarios.html'
+  templateUrl: './usuarios.html'
 })
-export class CRUDUsuariosComponent implements OnInit {
+export class UsuariosComponent implements OnInit {
   form: FormGroup;
-  users: User[] = [];
+  usuarios: Usuario[] = [];
   editMode = false;
-  editUserId: number | null = null;
+  editUsuarioId: number | null = null;
 
   constructor(private fb: FormBuilder, private http: HttpClient) {
     this.form = this.fb.group({
@@ -29,53 +33,53 @@ export class CRUDUsuariosComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.loadUsers();
+    this.loadUsuarios();
   }
 
-  loadUsers() {
-    this.http.get<User[]>('http://localhost:8080/api/users')
+  loadUsuarios() {
+    this.http.get<Usuario[]>('http://localhost:8080/api/usuarios')
     .subscribe(data => {
-      this.users = data;
+      this.usuarios = data;
     });
   }
 
   submit() {
     if (this.form.valid) {
-      if (this.editMode && this.editUserId !== null) {
-        this.http.patch(`http://localhost:8080/api/users/${this.editUserId}`, this.form.value)
+      if (this.editMode && this.editUsuarioId !== null) {
+        this.http.patch(`http://localhost:8080/api/usuarios/${this.editUsuarioId}`, this.form.value)
           .subscribe(() => {
-            this.loadUsers();
+            this.loadUsuarios();
             this.resetForm();
           });
       } else {
-        this.http.post('http://localhost:8080/api/users/register', this.form.value)
+        this.http.post('http://localhost:8080/api/usuarios/register', this.form.value)
           .subscribe(() => {
-            this.loadUsers();
+            this.loadUsuarios();
             this.resetForm();
           });
       }
     }
   }
 
-  editUser(user: User) {
+  editUsuario(usuario: Usuario) {
     this.editMode = true;
-    this.editUserId = user.id;
+    this.editUsuarioId = usuario.id;
     this.form.patchValue({
-      email: user.email,
-      password: user.password
+      email: usuario.email,
+      password: usuario.password
     });
   }
 
-  deleteUser(id: number) {
-    this.http.delete(`http://localhost:8080/api/users/${id}`)
+  deleteUsuario(id: number) {
+    this.http.delete(`http://localhost:8080/api/usuarios/${id}`)
       .subscribe(() => {
-        this.loadUsers();
+        this.loadUsuarios();
       });
   }
 
   resetForm() {
     this.editMode = false;
-    this.editUserId = null;
+    this.editUsuarioId = null;
     this.form.reset();
   }
 }

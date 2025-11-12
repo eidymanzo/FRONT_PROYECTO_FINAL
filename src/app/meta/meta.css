@@ -1,0 +1,55 @@
+/* Meta.css
+Estilos base para una aplicación financiera: Savings_App con los atributos: id,
+plazo, monto, límite, objetivo.
+
+-Diseño:
+-Medir el progreso económico, hacer seguimiento de las finanzas, tener motivación de ahorro 
+organizar el capital para un manejo óptimo del dinero personal y a largo plazo.
+/*
+
+/* Para el estilo principal */
+.meta {
+  width: 400px;
+  margin: 15px auto;
+  padding: 10px;
+  border: 2px;
+  border-radius: 12px;
+  color:aqua;
+  font-family: Arial;
+}
+
+/* Para el estilo de los textos */
+.meta p {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Id */
+.meta .id {
+  font-weight: bold;
+  color:darkblue;
+}
+
+/* Plazo en el tiempo */
+.meta .plazo {
+  color:orange;
+  font-family: Arial;
+}
+
+/* Monto (Cantidad de dinero)*/
+.meta .monto {
+  color:lawngreen;
+  font-weight: bold;
+}
+
+/* Límite */
+.meta .limite {
+  color: red;
+}
+
+/* Objetivo */
+.meta .objetivo {
+  color:goldenrod;
+  font-weight: 500;
+}

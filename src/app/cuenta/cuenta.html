@@ -1,4 +1,6 @@
+<h1> Savings_App_</h1>
 <h2>Gestión de Cuentas</h2>
+<h2> Controla tu cuenta bancaria> 
 
 <form [formGroup]="form" (ngSubmit)="submit()">
      <label>id:</label>
@@ -15,20 +17,24 @@
 
 <table>
   <thead>
+
+    <meta charset="UTF-8" />
+        <title>Ejemplo de estilos desde fichero externo</title>
+        <link rel="stylesheet" type="text/css" href="estilos.css"/>
+
     <tr>
-      <th>ID</th>
-      <th>Ahorro</th>
-      <th>Ingresos</th>
-      <th>Gastos</th>
+      <th>id</th>
+      <th>ahorro</th>
+      <th>ingresos</th>
+      <th>gastos</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let cuenta of cuentas">
       <td>{{ cuenta.id }}</td>
-       <td>{{ <cuenta class="id"></cuenta> }}</td>
-      <td>{{ <cuenta class="ahorro"></cuenta> }}</td>
-      <td>{{ <cuenta class="ingresos"></cuenta> }}</td>
-      <td>{{ <cuenta class="gastos"></cuenta> }}</td>
+      <td>{{ cuenta.ahorro }}</td>
+      <td>{{ cuenta.ingresos }}</td>
+      <td>{{ cuenta.gastos }}</td>
       <td>
         <button (click)="editCuenta(cuenta)">Editar</button>
         <button (click)="deleteCuenta(cuenta.id)">Eliminar</button>

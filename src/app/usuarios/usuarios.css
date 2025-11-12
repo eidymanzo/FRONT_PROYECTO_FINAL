@@ -1,0 +1,62 @@
+/* Usuarios.css
+Definición de estilos base para una aplicación financiera: Savings_App con los 
+atributos: id, ahorro, ingresos, gastos.
+-Diseño
+-Tarjeta de identificación del usuario, formulario de entrada de datos  
+y verificación de acceso y registro.
+/*
+
+
+/* Registro principal del usuario */
+.usuario {
+  width: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 2px solid blue;
+  border-radius: 5px;
+  color:royalblue;
+  font-family: Arial;
+}
+
+/* Estilo general para un texto */
+.usuario p {
+  margin: 10px 0;
+  font-size: 10px;
+  line-height: 1.0;
+}
+
+/* Id */
+.usuario .id {
+  font-weight: bold;
+  color:darkblue;
+}
+
+/* Nombre y Apellido */
+.usuario .nombre,
+.usuario .apellido {
+  color:darkslateblue;
+  font-weight: 600;
+}
+
+/* Email */
+.usuario .email {
+  color:black;
+  text-decoration: underline;
+}
+
+/* Teléfono */
+.usuario .telefono {
+  color:rebeccapurple;
+}
+
+/* Nombre de usuario */
+.usuario .nombreUsuario {
+  color:orange;
+  font-style: normal;
+}
+
+/* Password */
+.usuario .password {
+  color: red;
+  font-weight: bold;
+}

@@ -14,11 +14,11 @@ interface Cuenta {
   selector: 'app-cuentas-crud',
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
-  templateUrl: './crud-cuentas.html'
+  templateUrl: './cuenta.html'
 })
 export class CuentasComponent implements OnInit {
   form: FormGroup;
-  cuenta: Cuenta[] = [];
+  cuentas: Cuenta[] = [];
   editMode = false;
   editCuentaId: number | null = null;
 
@@ -38,7 +38,7 @@ export class CuentasComponent implements OnInit {
   loadCuentas() {
     this.http.get<Cuenta[]>('http://localhost:8080/api/cuentas')
     .subscribe(data => {
-      this.cuenta = data;
+      this.cuentas = data;
     });
   }
 
