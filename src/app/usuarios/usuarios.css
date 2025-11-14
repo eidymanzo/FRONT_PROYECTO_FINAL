@@ -1,6 +1,8 @@
 /* Usuarios.css
-Definición de estilos base para una aplicación financiera: Savings_App con los 
-atributos: id, ahorro, ingresos, gastos.
+Estilos base para la aplicación financiera: Savings_App con los 
+atributos: 
+id, nombre, apellido, email, teléfono, nombre usuario, password.
+
 -Diseño
 -Tarjeta de identificación del usuario, formulario de entrada de datos  
 y verificación de acceso y registro.

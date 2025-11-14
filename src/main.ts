@@ -4,12 +4,12 @@ import { provideRouter } from '@angular/router';
 import { RegisterComponent } from './app/register/register';
 import { HomeComponent } from './app/home/home';
 import { LoginComponent } from './app/login/login';
-import { CRUDUsuariosComponent } from './app/crud-usuarios/crud-usuarios';
+import { UsuariosComponent } from './app/usuarios/usuarios';
 
 const routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'usuarios', component: CRUDUsuariosComponent },  // Nueva ruta CRUD
+  { path: 'usuarios', component: UsuariosComponent },  // Nueva ruta CRUD
   
 ];
 
